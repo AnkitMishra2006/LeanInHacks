@@ -23,4 +23,4 @@ def predict():
     # return f"Predicted Data: Temperature - {predictions['temp']}, CO₂ Level - {predictions['co2']} ppm, sea level - {predictions['seaLevel']}"
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True, port=8080)
