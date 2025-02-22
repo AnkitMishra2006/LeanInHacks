@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block title %} TEST {% endblock title %} {% block
+body %}
+<a href="http://127.0.0.1:8080/">Home</a>
+<h1>plot</h1>
+<img
+  src="data:image/png;base64,{{ plot['ltPlot'] | safe }}"
+  alt="Climate Graph"
+  style="width: 600px; height: auto"
+/>
+<img
+  src="data:image/png;base64,{{ plot['slPlot'] | safe }}"
+  alt="Climate Graph"
+  style="width: 600px; height: auto"
+/>
+<img
+  src="data:image/png;base64,{{ plot['coPlot'] | safe }}"
+  alt="Climate Graph"
+  style="width: 600px; height: auto"
+/>
+
+{% endblock body %}

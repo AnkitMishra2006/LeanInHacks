@@ -39,4 +39,3 @@ def CHpredict(year, month):
 
         return prediction[0]
     
-print(LTpredict(2035, 1))
