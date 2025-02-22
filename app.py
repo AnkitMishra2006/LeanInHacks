@@ -18,6 +18,7 @@ def predict():
     predictions["temp"] = LTpredict(year, month) 
     predictions["seaLevel"] = SLpredict(year, month)
     predictions["co2"] = COpredict(year, month)
+    predictions["ch4"] = CHpredict(year, month)
 
     return render_template('output.html', data = predictions)
     # return f"Predicted Data: Temperature - {predictions['temp']}, CO₂ Level - {predictions['co2']} ppm, sea level - {predictions['seaLevel']}"
