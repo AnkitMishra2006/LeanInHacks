@@ -14,6 +14,11 @@ app.get("/", (req, res) => {
   res.sendfile("index.html");
 });
 
+app.post("/predict", (req, res) => {
+  let data = req.body["userData"];
+  res.send(data);
+});
+
 app.listen(port, () => {
   console.log(`app is listening on port ${port}`);
 });
