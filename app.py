@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 from predictFuncs import * 
 from graphFuncs import *
+import os
 
 app = Flask(__name__)
 CORS(app)  
@@ -28,7 +29,7 @@ def predict():
     plots["coPlot"] = COplot(sYear)
 
 
-    return render_template('output.html', data = predictions, plots = plots)
+    return render_template('predict.html', data = predictions, plots = plots)
     # return f"Predicted Data: Temperature - {predictions['temp']}, CO₂ Level - {predictions['co2']} ppm, sea level - {predictions['seaLevel']}"
 
 @app.route('/plot', methods=['POST'])
@@ -45,4 +46,5 @@ def plot():
     return render_template('plot.html', plot = plots)
     
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
